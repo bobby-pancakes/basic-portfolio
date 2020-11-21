@@ -1,761 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Publishing a simple web portfolio on Netlify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My simple portfolio</title>
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/skeleton.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body class="container">
-    <div class="row">
-      <ul id="toc" class="toc four columns">
-        <li>
-          <a href="#publishing-a-simple-web-portfolio-on-netlify"
-            >Publishing a simple web portfolio on Netlify</a
-          >
+  <body>
+    <nav class="main-nav">
+      <img src="./icons/logo.svg" alt="Two pancakes with butter." />
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="#about">
+            <p class="ui-text">About</p>
+          </a>
         </li>
-        <li>
-          <a href="#what-you-need">What you'll need</a>
+        <li class="nav-list-item">
+          <a href="#samples">
+            <p class="ui-text">Samples</p>
+          </a>
         </li>
-        <li>
-          <a href="#what-you-wont-need">What you won't need</a>
-        </li>
-        <li>
-          <a href="#set-up-github">Set up GitHub</a>
-          <ul>
-            <li>
-              <a href="#creating-a-github-account">Creating a GitHub account</a>
-            </li>
-            <li>
-              <a href="#creating-a-repo-in-github">Creating a repo in GitHub</a>
-            </li>
-            <li><a href="#resources">Resources</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#set-up-netlify">Set up Netlify</a>
-          <ul>
-            <li>
-              <a href="#creating-a-netlify-account"
-                >Creating a Netlify account</a
-              >
-            </li>
-            <li>
-              <a href="#pointing-netlify-at-your-github-repository"
-                >Pointing Netlify at your GitHub repository</a
-              >
-            </li>
-            <li><a href="#resources-1">Resources</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#set-up-your-local-workspace">Set up your local workspace</a>
-          <ul>
-            <li><a href="#install-vs-code">Install VS Code</a></li>
-            <li>
-              <a href="#creating-a-local-project">Creating a local project</a>
-            </li>
-            <li>
-              <a href="#previewing-your-site-locally"
-                >Previewing your site locally</a
-              >
-            </li>
-            <li>
-              <a href="#making-the-magic">Making the magic</a>
-            </li>
-            <li>
-              <a href="#vs-code-extensions">VS Code extensions</a>
-              <ul>
-                <li><a href="#utilities">Utilities</a></li>
-                <li><a href="#themes">Themes</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#resources-2">Resources</a>
-              <ul>
-                <li><a href="#html-links">HTML links</a></li>
-                <li><a href="#css-links">CSS links</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#add-your-html-and-css-to-your-github-repo"
-            >Add your HTML and CSS to your GitHub repo</a
-          >
-          <ul>
-            <li>
-              <a href="#uploading-your-files-to-github"
-                >Uploading your files to GitHub</a
-              >
-            </li>
-            <li><a href="#resources-3">Resources</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#review-your-live-website-and-make-changes-as-necessary"
-            >Review your live website and make changes as necessary</a
-          >
-          <ul>
-            <li>
-              <a href="#checking-your-site-publishing-status"
-                >Checking your site's publishing status</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#portfolio-examples">Portfolio examples</a>
+        <li class="nav-list-item">
+          <a href="#experience">
+            <p class="ui-text">Experience</p>
+          </a>
         </li>
       </ul>
-
-      <div class="content eight columns">
-        <!-- <a href="#toc"><button class="nav-jump">To TOC</button></a> -->
-
-        <h1 id="publishing-a-simple-web-portfolio-on-netlify">
-          Publishing a simple web portfolio on Netlify
-        </h1>
+    </nav>
+    <div class="intro">
+      <div class="intro-content">
+        <h1>Simple portfolio site</h1>
         <p>
-          You don't need to follow this walkthrough exactly. If you know what
-          you're doing, feel free to skip any portion. The worst thing that
-          happens is your site doesn't deploy. Which means you get to
-          troubleshoot and make it better.
+          Agile development branding handshake ecosystem innovator hypotheses
+          hackathon business-to-business startup series A financing.
         </p>
-        <p>
-          If you want to use a different text editor, repository host, or other
-          tool/service, feel free. However, I'll only cover Visual Studio Code
-          (VS Code) and Netlify in this walkthrough.
-        </p>
-        <p>
-          For those who want a simple, step-by-step guide, follow along, and
-          you'll have your own website up and running quickly. No particularly
-          technical skills needed and no paid tools or services recommended.
-        </p>
-
-        <h2 id="what-you-need">What you'll need</h2>
-        <ul>
-          <li>GitHub account</li>
-          <li>Netlify account</li>
-          <li>Text editor - in this case Visual Studio Code (VS Code)</li>
-          <li>Basic HTML</li>
-          <li>Basic CSS</li>
-        </ul>
-
-        <h2 id="what-you-wont-need">What you won't need</h2>
-        <ul>
-          <li>Paid tools or services</li>
-          <li>JavaScript</li>
-          <li>Command line</li>
-          <li>Servers</li>
-          <li>CMS</li>
-        </ul>
-        <h2 id="set-up-github">Set up GitHub</h2>
-        <p>
-          GitHub is a git repository host. You can think of it as a sort of file
-          storage service. There's a lot more to it than that, but we won't get
-          into the details of git or GitHub in this walkthrough.
-        </p>
-        <h3 id="creating-a-github-account">Creating a GitHub account</h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              If you don't have a GitHub account, go to
-              <a href="https://github.com/">GitHub.com</a>. On the main page,
-              enter your information, then click
-              <strong>Sign up for GitHub</strong>.
-            </p>
-
-            <img
-              src="./images/github.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-
-            <p class="note">
-              <strong>Note:</strong> You may need to verify that you're a human
-              at this point.
-            </p>
-          </li>
-          <li>
-            <p>
-              On the Welcome to GitHub page, select your answers, then select
-              <strong>Complete Setup</strong>.
-            </p>
-          </li>
-          <li>
-            <p>Verify your email address.</p>
-          </li>
-        </ol>
-        <h3 id="creating-a-repo-in-github">Creating a repo in GitHub</h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              After signing into GitHub, on the home page (<a
-                href="http://github.com"
-                >github.com</a
-              >), select <strong>Create repository</strong>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Ensure you're the repository owner and enter a repository name.
-            </p>
-          </li>
-          <li>
-            <p>Optionally, you can add a description for the repository.</p>
-          </li>
-          <li>
-            <p>
-              Choose whether you want the repository to be visible to other
-              people (public or private).
-            </p>
-          </li>
-          <li>
-            <p>
-              Optionally, choose to include a README file, .gitignore file, or a
-              license.
-            </p>
-            <ul>
-              <li>
-                <p>
-                  You should definitely include a README file to document your
-                  work.
-                </p>
-              </li>
-              <li>
-                <p>
-                  If you don't know what a .gitignore file is, you probably
-                  don't need it.
-                </p>
-              </li>
-              <li>
-                <p>
-                  If you don't know what license to choose, the MIT or Mozilla
-                  Public License are good places to start.
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              After all of that, click <strong>Create repository</strong>. You
-              should see something like this:
-            </p>
-
-            <img
-              src="./images/new-repo.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-          </li>
-        </ol>
-        <p>
-          You can do a lot of things with a GitHub account. We'll come back to
-          this repository later in the guide, but will make minimal use of it.
-          If you want to learn more about GitHub (and git), check out the
-          following
-          <strong>Resources</strong> section.
-        </p>
-        <h3 id="resources">Resources</h3>
-        <ul>
-          <li>
-            GitHub's short
-            <a href="https://guides.github.com/activities/hello-world/"
-              >Hello World guide</a
-            >
-            is a great place to start.
-          </li>
-          <li>
-            You can also check out
-            <a href="https://guides.github.com/"
-              >the other official GitHub guides</a
-            >.
-          </li>
-          <li>
-            I personally love the
-            <a
-              href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV&amp;app"
-              >Git and GitHub for Poets</a
-            >
-            YouTube series.
-          </li>
-        </ul>
-        <h2 id="set-up-netlify">Set up Netlify</h2>
-        <p>
-          Netlify will host your web portfolio for free. If you have your own
-          domain name, you can set up Netlify to work with it. If you don't,
-          Netlify will give you a Netlify sub-domain for free.
-        </p>
-        <p class="tip">
-          <strong>Tip:</strong> Netlify offers automatic
-          <a
-            href="https://docs.netlify.com/domains-https/https-ssl/#certificate-service-types"
-            >free HTTPS certificates</a
-          >
-          for sites hosted on their platform with custom domains.
-        </p>
-        <p>For further details refer to this section's resources.</p>
-        <h3 id="creating-a-netlify-account">Creating a Netlify account</h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              Go to <a href="https://www.netlify.com/">Netlify.com</a> and click
-              <strong>Sign up</strong>.
-            </p>
-          </li>
-          <li>
-            <p>Select the GitHub option.</p>
-            <p>
-              This will link your Netlify and GitHub accounts, streamlining the
-              publishing process for your portfolio.
-            </p>
-          </li>
-          <li>
-            <p>
-              Authorize Netlify on your GitHub account by selecting
-              <strong>Authorize Netlify</strong>.
-            </p>
-
-            <img
-              src="./images/netlify-and-github.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-          </li>
-        </ol>
-        <h3 id="pointing-netlify-at-your-github-repository">
-          Pointing Netlify at your GitHub repository
-        </h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              In Netlify, on the <strong>Team overview</strong> page, select the
-              <strong>New site from git</strong> button.
-            </p>
-
-            <img
-              src="./images/new-site.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-          </li>
-          <li>
-            <p>Under <strong>Continous deployment</strong>, select GitHub.</p>
-          </li>
-          <li>
-            <p>
-              Give Netlify permissions to verify your identity and act in GitHub
-              on your behalf by selecting <strong>Authorize Netlify</strong>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Set the scope of the Netlify integration by choosing** Select
-              repositories only**, then click <strong>Install</strong>.
-            </p>
-            <p class="note">
-              <strong>Note:</strong> You can optionally install Netlify for all
-              repositories on this GitHub account. I don't recommend that, as
-              it's not necessary.
-            </p>
-
-            <img
-              src="./images/scope.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-          </li>
-          <li>
-            <p>
-              Under <strong>Continuous Deployment: GitHub App</strong>, click on
-              your portfolio repository.
-            </p>
-          </li>
-          <li>
-            <p>
-              Confirm your deployment settings (the defaults should be fine if
-              you've followed this walkthrough), then click
-              <strong>Deploy site</strong>.
-            </p>
-          </li>
-        </ol>
-        <h3 id="resources-1">Resources</h3>
-        <ul>
-          <li>
-            <a href="https://docs.netlify.com/">Netlify docs</a>
-          </li>
-          <li>
-            <a
-              href="https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/"
-              >Setting up your own domain name on Netlify</a
-            >
-          </li>
-        </ul>
-        <h2 id="set-up-your-local-workspace">Set up your local workspace</h2>
-        <h3 id="install-vs-code">Install VS Code</h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              <a href="https://code.visualstudio.com/">Download</a> and install
-              VS Code.
-            </p>
-          </li>
-          <li>
-            <p>
-              Open VS Code, and select the extensions icon
-              <img
-                src="./images/extension.png"
-                alt="GitHub sign up form with prominent call to action button."
-                title="GitHub sign up form"
-              />
-              from the left-hand menu.
-            </p>
-          </li>
-          <li>
-            <p>
-              Search for &quot;live server&quot; and install the Live Server
-              extension.
-            </p>
-
-            <img
-              src="./images/live-server.png"
-              alt="GitHub sign up form with prominent call to action button."
-              title="GitHub sign up form"
-            />
-          </li>
-        </ol>
-        <h3 id="creating-a-local-project">Creating a local project</h3>
-        <p>
-          Now that you have VS Code installed, it's time to set up a project. I
-          put together a starter for you as a simple reference.
-        </p>
-        <h4>Dowloading a GitHub project</h4>
-        <ol class="procedure">
-          <li>
-            <p>
-              Go to the
-              <a href="https://github.com/bobby-pancakes/WTD-simple-portfolio"
-                >WTD-simple-portfolio</a
-              >
-              created by user Bobby Pancakes (an alias I created for this
-              project).
-            </p>
-          </li>
-          <li>
-            <p>Click the green Code button, then select Download ZIP.</p>
-          </li>
-          <li>
-            <p>
-              Extract the downloaded folder somewhere on your local computer.
-            </p>
-          </li>
-          <li>
-            <p>
-              In VS Code, open the downloaded project. It should look something
-              like this:
-            </p>
-            <img
-              src="./images/project.png"
-              alt="Project structure"
-              title="Project structure"
-            />
-          </li>
-        </ol>
-        <h4 id="previewing-your-site-locally">Previewing your site locally</h4>
-        <p>
-          One benefit of web development is quickly seeing how your changes
-          affect your site. With the Live Server extension installed, you can
-          preview your site before you upload it to GitHub. Read on to see how.
-        </p>
-        <ol class="procedure">
-          <li>
-            <p>
-              In VS Code, right-click the index.html file the left-hand
-              navigation, then select <strong>Open with Live Server</strong>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Live Server should automatically open a new tab in your browser
-              and you'll see your site. If not, enter
-              <code>localhost:&#60;portNumber></code> in your browser's URL bar.
-            </p>
-            <img
-              src="./images/port.png"
-              alt="Live Server indicates which port you can preview your site on."
-              title="Live Server port"
-            />
-            <p class="note">
-              <strong>Note:</strong> Typically, Live Server uses
-              <code>localhost:5000</code>, but if that's not available, it'll be
-              different. You can find your port in VS Code's lower-right status
-              bar.
-            </p>
-          </li>
-        </ol>
-
-        <h4 id="making-the-magic">Making the magic</h4>
-        <p>
-          This is where you get creative. Start with the design and layout or
-          write your content, then design around it. This is your portfolio,
-          build it however you want. If you're not sure where to start, take a
-          look at this section's resources and the
-          <a href="#portfolio-examples">Portfolio examples</a> section.
-        </p>
-
-        <p>
-          When you're ready, move on to
-          <a href="#uploading-your-files-to-github"
-            >Uploading your files to GitHub</a
-          >.
-        </p>
-        <h3 id="vs-code-extensions">VS Code extensions</h3>
-        <p>
-          There are many useful VS Code extensions. Here are some that I
-          recommend.
-        </p>
-        <h4 id="utilities">Utilities</h4>
-        <ul>
-          <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
-              >Prettier</a
-            >. A linter that supports auto formatting for many programming
-            languages.
-          </li>
-          <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
-              >Bracket Pair Colorizer</a
-            >. For making JavaScript a little more readable.
-          </li>
-        </ul>
-        <h4 id="themes">Themes</h4>
-        <ul>
-          <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code"
-              >Nord</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=huytd.nord-light"
-              >Nord Light</a
-            >
-            - this is what I'm currently using
-          </li>
-          <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme"
-              >One Dark Pro</a
-            >
-          </li>
-        </ul>
-        <h3 id="resources-2">Resources</h3>
-        <h4 id="html-links">HTML</h4>
-        <ul>
-          <li>
-            <a href="https://meettheipsums.com/">Meet the Ipsums</a>. A
-            collection of Lorem Ipsum generators from around the internet.
-          </li>
-          <li>
-            <a href="https://www.freecodecamp.org/news/semantic-html5-elements/"
-              >FreeCodeCamp article about semantic HTML5</a
-            >. This is a good primer for HTML5 elements and how, why, and when
-            you should use them.
-          </li>
-          <li>
-            <a href="https://www.w3.org/People/Raggett/book4/ch02.html"
-              >W3 chapter about the history of the internet</a
-            >. If you want to take a deep dive into why HTML is the way it is.
-          </li>
-        </ul>
-        <h4 id="css-links">CSS</h4>
-        <ul>
-          <li>
-            <a href="https://gridbyexample.com/">Grid by Example</a>. Fantastic
-            resource for learning CSS Grid, which I highly recommend.
-          </li>
-          <li>
-            <a href="https://colordesigner.io/">Color Designer</a>. A great free
-            web-based tool for building color themes. Also, check out
-            <a href="http://colormind.io/">Colormind</a>.
-          </li>
-          <li>
-            <a href="https://css-tricks.com/">CSS Tricks</a>. One of the best
-            places to learn about CSS. Extensive library of articles about
-            anything you could think of - almost always with examples.
-          </li>
-        </ul>
-        <h2 id="add-your-html-and-css-to-your-github-repo">
-          Add your HTML and CSS to your GitHub repo
-        </h2>
-        <p>Now that you have your site ready, it's time to upload it GitHub!</p>
-        <h3 id="uploading-your-files-to-github">
-          Uploading your files to GitHub
-        </h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              On the GitHub website, navigate to the repository you created
-              earlier in this walkthrough.
-            </p>
-          </li>
-          <li>
-            <p>
-              Click the <strong>Add file</strong>file, then select
-              <strong>Upload files</strong>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Select all files and folders in your VS Code project or drag them
-              into the GitHub website's GUI.
-            </p>
-          </li>
-          <li>
-            <p>
-              Add a commit message, like "Initial upload", and a description if
-              you want, then click <strong>Commit changes</strong>.
-            </p>
-          </li>
-        </ol>
-
-        <p>You're almost there! Congratulations on making it this far.</p>
-
-        <h3 id="resources-3">Resources</h3>
-        <ul>
-          <li>
-            <strong
-              ><a href="https://desktop.github.com/">GitHub desktop</a>.</strong
-            >
-            Instead of uploading via GitHub's website, you can use their desktop
-            client.
-          </li>
-          <li>
-            <strong
-              ><a href="https://docs.github.com/en/free-pro-team@latest/desktop"
-                >GitHub desktop docs</a
-              >.</strong
-            >
-            These are the official docs for GitHub Desktop.
-          </li>
-        </ul>
-        <h2 id="review-your-live-website-and-make-changes-as-necessary">
-          Review your live website and make changes as necessary
-        </h2>
-        <p>
-          After you've uploaded your HTML, CSS, and any other files (like images
-          and sample docs), Netlify will automatically update your site.
-        </p>
-        <p>
-          It does this by watching your GitHub repository. When there's a
-          change, it automatically pulls the updated files and builds your site.
-        </p>
-        <h3 id="checking-your-site-publishing-status">
-          Checking your site's publishing status
-        </h3>
-        <ol class="procedure">
-          <li>
-            <p>
-              In Netlify, on the <strong>Site overview</strong> tab, find the
-              <strong>Production deploys</strong> section.
-            </p>
-            <img
-              src="./images/deploy.png"
-              alt="Netlify shows deploy statuses."
-              title="Netlify deploy status"
-            />
-          </li>
-          <li>
-            <p>
-              Check the status of the lates deploy. It should have one of the
-              following tags:
-            </p>
-
-            <ul>
-              <li>
-                <p>
-                  <strong>Published.</strong> Successfully deployed and ready to
-                  view at your site's URL.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Building.</strong> Processing your GitHub repo's files
-                  and setting up deployment.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Failed.</strong> Something didn't work. Check the
-                  deployment logs for details.
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ol>
-        <p>
-          After your site is published, all you need to do is refresh your
-          browser to see the updates.
-        </p>
-        <h3 id="viewing-your-portfolio">Viewing your portfolio</h3>
-        <p>
-          Well, you did all of that work. So, how do you view it? If you didn't
-          set up a custom domain name, Netlify automatically creates a random
-          URL for your website. This URL won't change after it's assigned to
-          your site.
-        </p>
-        <ol class="procedure">
-          <li>
-            <p>
-              In Netlify, on the <strong>Site overview</strong> tab, find the
-              site information card.
-            </p>
-            <img
-              src="./images/site-url.png"
-              alt="Netlify site URL location."
-              title="Netlify site URL"
-            />
-          </li>
-          <li>
-            <p>
-              Click the link in the site information card, or copy it and share
-              it with others.
-            </p>
-          </li>
-        </ol>
-        <h2 id="portfolio-examples">Portfolio examples</h2>
-        <p>
-          Here are some writer portfolio examples. These are not technical
-          writer portfolios. However, they all have strong design and good UX.
-        </p>
-        <p>
-          I don't know any of these people. I came across their sites by
-          googling for writer portfolios.
-        </p>
-        <ul>
-          <li>
-            <a href="https://www.stephanieodili.com">Stephanie Chizoba Odili</a
-            >.
-            <p>
-              Excellent design. Probably includes JavaScript, but wouldn't have
-              to.
-            </p>
-          </li>
-          <li>
-            <a href="http://www.kirabutler.com/">Kira Butler</a>. Definitely in
-            JavaScript land here, but the layout and design elements can be done
-            without it.
-          </li>
-          <li>
-            <a href="https://www.kaylalewkowicz.com/">Kayla Lewkowicz</a>.
-            Effective layout that's easy to do without any JavaScript.
-          </li>
-        </ul>
       </div>
+    </div>
+    <div class="container">
+      <section id="about">
+        <h2>About Bobby Pancakes</h2>
+        <p class="description">
+          Conversion value proposition assets leverage. IPhone business model
+          canvas holy grail funding. Product management pitch user experience
+          crowdfunding stock venture direct mailing. Buyer product management
+          assets facebook crowdsource validation graphical user interface.
+        </p>
+      </section>
+      <section class="skills">
+        <h2>Skills</h2>
+        <p>
+          Startup hackathon paradigm shift. First mover advantage freemium user
+          experience low hanging fruit alpha leverage ownership. Innovator
+          backing disruptive android first mover advantage vesting period.
+          Business plan backing innovator conversion startup product management.
+        </p>
+        <ul class="skill-list">
+          <li class="skill-list-item">API maker</li>
+          <li class="skill-list-item">Pancake maker</li>
+          <li class="skill-list-item">Vampire staker</li>
+        </ul>
+      </section>
+      <section id="samples">
+        <h2>Samples</h2>
+        <ul class="sample-list">
+          <li class="sample card">
+            <div class="content">
+              <h3>Sample title 1</h3>
+              <div class="meta">
+                <p>sample meta-info</p>
+              </div>
+              <p class="description">
+                Conversion value proposition assets leverage. IPhone business
+                model canvas holy grail funding. Product management pitch user
+                experience crowdfunding stock venture direct mailing.
+              </p>
+            </div>
+            <div class="button-group">
+              <button class="download">
+                <a href="./samples/Sample1.odt" download="sample1">Download</a>
+              </button>
+            </div>
+          </li>
+          <li class="sample card">
+            <div class="content">
+              <h3>Sample title 2</h3>
+              <div class="meta">
+                <p>sample meta-info</p>
+              </div>
+              <p class="description">
+                Product management gen-z founders marketing pivot branding
+                gamification return on investment conversion user experience
+                seed money agile development niche market technology.
+              </p>
+            </div>
+            <div class="button-group">
+              <button class="download">
+                <a href="./samples/Sample2.odt" download="sample2">Download</a>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section id="experience">
+        <h2>Work experience</h2>
+        <ul class="job-list">
+          <li class="job card">
+            <img
+              src="./icons/employer-logo.svg"
+              alt="Placholder image for an employer logo."
+            />
+
+            <div class="content">
+              <h3>Job title 1</h3>
+              <div class="meta">
+                <p>Employer 1</p>
+                <p>01/01/1900 - 01/01/2020</p>
+              </div>
+              <p class="description">
+                Metrics series A financing return on investment channels startup
+                crowdfunding technology venture virality investor accelerator.
+              </p>
+              <ul class="skill-list">
+                <li class="skill-list-item">Pancake maker</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job card">
+            <img
+              src="./icons/employer-logo.svg"
+              alt="Placholder image for an employer logo."
+            />
+
+            <div class="content">
+              <h3>Job title 2</h3>
+              <div class="meta">
+                <p>Employer 2</p>
+                <p>01/01/1800 - 01/01/1900</p>
+              </div>
+              <p class="description">
+                Churn rate value proposition metrics ecosystem success termsheet
+                startup android.
+              </p>
+              <ul class="skill-list">
+                <li class="skill-list-item">API maker</li>
+                <li class="skill-list-item">Vampire staker</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
   </body>
 </html>
