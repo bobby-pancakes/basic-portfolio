@@ -5,6 +5,19 @@
   + Icons courtesy of Heroicons: https://heroicons.com/ 
 */
 
+/* THEME
+   ========================================================================== */
+:root {
+  --color-primary: #955183;
+  --color-primary-alpha: rgba(95, 51, 83, 0.85);
+  --color-primary-light: #e5d7e3;
+  --color-secondary: #475a92;
+  --color-text-primary: #333333;
+  --color-text-inverse: #ffffff;
+  --box-shadow-primary: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 /* GENERAL UI
    ========================================================================== */
 html {
@@ -16,7 +29,7 @@ body {
   font-size: 2em;
   line-height: 1.6;
   font-weight: 400;
-  color: #222;
+  color: var(--color-text-primary);
   background-color: #e5d7e3;
   background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%23955183' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
@@ -32,6 +45,13 @@ body > .content {
   margin-top: 3em;
 }
 
+/* Alter styles for larger screens */
+@media (min-width: 1000px) {
+  body > .content {
+    margin: 3em auto;
+  }
+}
+
 /* TYPOGRAPHY
    ========================================================================== */
 .ui-text {
@@ -44,6 +64,21 @@ body > .content {
 body p {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
+}
+
+a {
+  display: inline-block;
+  color: var(--color-primary);
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow-primary);
+  padding: 0 0.25em;
+  margin: 0 -0.25em;
+  border-radius: 3px;
 }
 
 h1,
@@ -117,32 +152,40 @@ p {
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button {
-  border: none;
-  color: #ffffff;
-  background-color: #955183;
-  border: 1px solid #80386e;
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary-alpha);
   border-radius: 3px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--box-shadow-primary);
   transition: background-color 0.5s;
 }
 
 button:hover {
-  background-color: #e5d7e3;
+  background-color: var(--color-primary-light);
+}
+
+button:hover a {
+  color: var(--color-text-primary);
+  background-color: var(--color-primary-light);
+}
+
+button:focus,
+button:active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 
 button a {
   display: inline-block;
-  color: #ffffff;
+  color: var(--color-text-inverse);
   text-decoration: none;
   width: 100%;
   transition: color 0.5s;
 }
 
-button:focus a,
-button:active a {
-  color: #333333;
-  background-color: #e5d7e3;
+button a:focus,
+button a:active {
+  color: var(--color-text-inverse);
 }
 
 /* Cards
@@ -151,11 +194,10 @@ button:active a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 3px;
-  background: #ffffff;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: var(--color-text-inverse);
+  box-shadow: var(--box-shadow-primary);
 }
 
 .card img {
@@ -184,10 +226,9 @@ button:active a {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .intro {
   position: relative;
-  min-height: 50vh;
   padding: 0 1em;
-  color: #ffffff;
-  background: rgba(95, 51, 83, 0.85);
+  color: var(--color-text-inverse);
+  background: var(--color-primary-alpha);
 }
 
 .intro-content .name {
@@ -217,7 +258,7 @@ button:active a {
   width: 100%;
   margin: 0;
   padding: 0.1em 0.5em;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-primary-alpha);
 }
 
 .promoted-items {
@@ -245,7 +286,8 @@ button:active a {
 }
 
 .promoted-item .p-item-image-container {
-  width: 4em;
+  min-width: 3em;
+  width: 3em;
 }
 
 .promoted-item .p-item-description {
@@ -255,9 +297,32 @@ button:active a {
 
 /* Alter styles for larger screens */
 @media (min-width: 1000px) {
+  .intro-content .name {
+    min-height: 500px;
+  }
+
+  .intro-content .name h1 {
+    padding: 0.5em 0.5em;
+  }
+
   .promoted-items {
     display: flex;
     flex-direction: row;
+  }
+
+  .promoted-item {
+    padding: 0.5em 1em;
+    max-width: 33%;
+  }
+
+  .promoted-item .p-item-image-container {
+    min-width: 4em;
+    width: 4em;
+  }
+
+  .promoted-item .p-item-content {
+    padding: 0;
+    margin-left: 1em;
   }
 }
 
@@ -276,7 +341,7 @@ button:active a {
 .skill-list-item {
   padding: 0.25rem 1rem;
   margin: 0.25rem 0.5rem;
-  border-top: 1px solid #475a92;
+  border-top: 1px solid var(--color-secondary);
 }
 
 /* Sample section
@@ -292,7 +357,7 @@ button:active a {
   flex-direction: column;
   position: relative;
   width: 100%;
-  border-color: #e4e4e4;
+  border-color: var(--color-primary-alpha);
   border-width: 2px;
   margin: 1em 0;
   padding: 1em 0;
@@ -318,11 +383,16 @@ button:active a {
 
   .sample.card {
     width: 45%;
+    margin: 0.5em;
   }
 }
 
 /* Experience section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.job.card {
+  border-color: var(--color-secondary);
+}
+
 .job .meta {
   display: flex;
   flex-direction: column;
@@ -347,6 +417,10 @@ button:active a {
   .job .meta p {
     margin: initial;
   }
+
+  .job .content {
+    padding: 1em 2em;
+  }
 }
 
 /* NAV
@@ -358,7 +432,7 @@ body > header {
   top: 0;
   height: 50px;
   z-index: 10;
-  background-color: #955183;
+  background-color: var(--color-primary);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -387,7 +461,7 @@ body > header {
 }
 
 .nav-list-item a {
-  color: #ffffff;
+  color: var(--color-text-inverse);
   text-decoration: none;
 }
 
@@ -402,4 +476,24 @@ body > header {
     width: 50px;
     margin-right: 1em;
   }
+}
+
+/* CREDITS
+   ========================================================================== */
+footer {
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+  padding: 0.5em 2em;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--color-text-inverse);
+}
+
+footer a:hover {
+  background: var(--color-secondary);
 }
