@@ -234,24 +234,19 @@ button a:active {
 .intro-content .name {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   margin: 0 -1em;
   min-height: 150px;
   z-index: 2;
 }
 
-.intro-content .name::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-image: url("/images/Dragon-friends-season-2-episode-02.webp");
-  background-repeat: no-repeat;
-  background-position: 95% 0;
-  background-size: cover;
-  z-index: -1;
+.intro-content .name img.portrait {
+  box-shadow: var(--box-shadow-primary);
+  border-radius: 3px;
+}
+
+.intro-content .name img.mural {
+  display: none;
 }
 
 .intro-content .name h1 {
@@ -323,6 +318,20 @@ button a:active {
   .promoted-item .p-item-content {
     padding: 0;
     margin-left: 1em;
+  }
+
+  .intro-content .name img.mural {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .intro-content .name {
+    flex-direction: row;
+    align-items: flex-end;
   }
 }
 
@@ -430,7 +439,7 @@ body > header {
   display: flex;
   align-items: center;
   top: 0;
-  height: 50px;
+  padding: 0.25em 0.5em;
   z-index: 10;
   background-color: var(--color-primary);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -448,6 +457,7 @@ body > header {
 
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   list-style-type: none;
@@ -461,7 +471,6 @@ body > header {
 }
 
 .nav-list-item a {
-  color: var(--color-text-inverse);
   text-decoration: none;
 }
 
@@ -490,10 +499,22 @@ footer p {
   margin: 0;
 }
 
-footer a {
+footer a,
+.nav-list-item a {
   color: var(--color-text-inverse);
+  transition: all 0.5s;
 }
 
-footer a:hover {
-  background: var(--color-secondary);
+footer a:hover,
+.nav-list-item a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-decoration-thickness: 4px;
+}
+
+footer a:focus,
+footer a:active,
+.nav-list-item a:focus,
+.nav-list-item a:active {
+  text-decoration-color: var(--color-primary-light);
 }
