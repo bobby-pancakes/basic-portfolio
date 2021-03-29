@@ -1,11 +1,13 @@
 # basic-portfolio
 This repository contains a small HTML and CSS website. There are no dependencies and there's nothing particularly fancy going on. Just a connection to Netflify, the website host.
 
-## Who is Bobby Pancakes?
-A rogue halfling character in the excellent [Dragon Friends](https://thedragonfriends.com/about/) D&D podcast. Played by Simon Greiner.
+## Who is Dr. Lyntel'luroon?
+Other than being the example for this portfolio, Trystan is an player character in the [Campaign podcast](https://one-shot.fandom.com/wiki/Campaign:Campaign) and is played by [Kat Kuhl](https://one-shot.fandom.com/wiki/Kat_Kuhl).
+
+If you like Star Wars, RPGs, and comedians, you should definitely listen to Campaign!
 
 ### Image credit
-Simon Greiner drew the art of Bobby Pancakes used on this site. You can see more at [https://thedragonfriends.fandom.com/wiki/Bobby_Pancakes](https://thedragonfriends.fandom.com/wiki/Bobby_Pancakes).
+Marian Churchland drew the portrait of Trystan used on this site.
 
 ## Live website
 Check out the [live website](https://wtd-basic-portfolio.netlify.app/) to see what this website looks like.

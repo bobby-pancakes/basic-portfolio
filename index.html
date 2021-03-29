@@ -9,238 +9,286 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <nav class="main-nav">
-        <img src="./icons/logo.svg" alt="Two pancakes with butter." />
-        <ul class="nav-list">
-          <li class="nav-list-item">
-            <a href="#about">
-              <p class="ui-text">About</p>
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a href="#samples">
-              <p class="ui-text">Samples</p>
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a href="#experience">
-              <p class="ui-text">Experience</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="intro">
-      <div class="intro-content">
-        <div class="name">
+    <div class="wrapper">
+      <header>
+        <div class="banner">
           <img class="mural" src="/images/mural.webp" alt="" />
-          <img class="portrait" src="/images/profile.png" alt="" />
-          <h1>Bobby Pancakes</h1>
+          <div class="content">
+            <img class="portrait" src="/images/profile.webp" alt="" />
+            <h1>Dr. Lyntel'luroon (Lyn)</h1>
+          </div>
         </div>
-        <ul class="promoted-items">
-          <li class="promoted-item">
-            <div class="p-item-image-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                />
-                <path
-                  d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
-                />
-              </svg>
-            </div>
-            <div class="p-item-content">
-              <h2 class="p-item-title">Transform</h2>
-              <p class="p-item-description">
-                Transforms into Robert, a smooth-talking jazz lover over whom
-                Bobby has a questionable measure of control.
-              </p>
-            </div>
-          </li>
-          <li class="promoted-item">
-            <div class="p-item-image-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <div class="p-item-content">
-              <h2 class="p-item-title">Art connoisseur</h2>
-              <p class="p-item-description">
-                Appreciates art, music, and magic
-              </p>
-            </div>
-          </li>
-          <li class="promoted-item">
-            <div class="p-item-image-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <div class="p-item-content">
-              <h2 class="p-item-title">Sneaky thief</h2>
-              <p class="p-item-description">
-                Knows the finer points of things.
-              </p>
-            </div>
-          </li>
-        </ul>
+      </header>
+      <div class="content">
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="#about">
+                <p class="ui-text">About</p>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#samples">
+                <p class="ui-text">Samples</p>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#experience">
+                <p class="ui-text">Experience</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section id="intro" class="intro">
+          <div class="intro-content">
+            <ul class="promoted-items">
+              <li class="promoted-item">
+                <div class="p-item-image-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
+                      clip-rule="evenodd"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z"
+                      clip-rule="evenodd"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div class="p-item-content">
+                  <h2 class="p-item-title">Anthropology</h2>
+                  <p class="p-item-description">
+                    Studies people and cultures to learn from them. Applies that
+                    learning to real-world situations.
+                  </p>
+                </div>
+              </li>
+              <li class="promoted-item">
+                <div class="p-item-image-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div class="p-item-content">
+                  <h2 class="p-item-title">Archaeology</h2>
+                  <p class="p-item-description">
+                    Understands how to find and interprate artifacts of extinct
+                    peoples and cultures.
+                  </p>
+                </div>
+              </li>
+              <li class="promoted-item">
+                <div class="p-item-image-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div class="p-item-content">
+                  <h2 class="p-item-title">Library science</h2>
+                  <p class="p-item-description">
+                    Organizes vast amounts of information by applying rigorous
+                    structure.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="about">
+          <h2>About Lyn</h2>
+          <p class="description">
+            Lyn is from the Twi'lek homeplanet Ryloth. Her father and brother
+            both died within one month, while Lyn and her mother were
+            off-planet. She never really got along with her mother, but this put
+            a definite rift between them. She hasn't spoken to her mother in
+            over a decade, but thinks it is better that way. Her mother remains
+            on Ryloth, 'doing the professor thing.'
+          </p>
+
+          <p>
+            Lyn first encounters the other protagonists on
+            <a href="https://one-shot.fandom.com/wiki/Campaign:Myrkr_Arc"
+              >Myrkr</a
+            >, where she was studying the force-sensitive lizards of that
+            planet. After the crew steal the engine of her ship, she joins them
+            as half-owner of the Mynock.
+          </p>
+        </section>
+        <section class="skills">
+          <h2>Skills</h2>
+          <p>
+            Lyn is a genius when it comes to engines. She created a specialized
+            engine which utilizes crystals that -- in the right formation on a
+            well-armored, fast ship -- can steal the power from another ship.
+          </p>
+          <ul class="skill-list">
+            <li class="skill-list-item">Mechanic</li>
+            <li class="skill-list-item">Tomb raider</li>
+            <li class="skill-list-item">Academic navigator</li>
+          </ul>
+        </section>
+        <section id="samples">
+          <h2>Samples</h2>
+          <ul class="sample-list">
+            <li class="sample card">
+              <div class="content">
+                <h3>Siphon Engine Schematic</h3>
+                <div class="meta">
+                  <p>Dangerous, but useful</p>
+                </div>
+                <p class="description">
+                  A technical description of how Lyn's siphon engine works. Has
+                  diagrams and everything!
+                </p>
+              </div>
+              <div class="button-group">
+                <button class="download">
+                  <a href="./samples/Sample1.odt" download="sample1"
+                    >Download</a
+                  >
+                </button>
+              </div>
+            </li>
+            <li class="sample card">
+              <div class="content">
+                <h3>Active Anthropology</h3>
+                <div class="meta">
+                  <p>A call to action</p>
+                </div>
+                <p class="description">
+                  Learning and gathering knowledge about people and cultures is
+                  great; what's even better is using that knowlege to help those
+                  people.
+                </p>
+              </div>
+              <div class="button-group">
+                <button class="download">
+                  <a href="./samples/Sample2.odt" download="sample2"
+                    >Download</a
+                  >
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section id="experience">
+          <h2>Work experience</h2>
+          <ul class="job-list">
+            <li class="job card">
+              <div class="job-image-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
+                  />
+                </svg>
+              </div>
+              <div class="content">
+                <h3>Archaeologist and Antrhopologist</h3>
+                <div class="meta">
+                  <p>Jedi Exploration Corps</p>
+                  <p>01/01/1900 - 01/01/2020</p>
+                </div>
+                <p class="description">
+                  Explored the fringes of the galaxy, searching for history and
+                  applying it to the present.
+                </p>
+                <ul class="skill-list">
+                  <li class="skill-list-item">Tomb raider</li>
+                  <li class="skill-list-item">Academic navigator</li>
+                </ul>
+              </div>
+            </li>
+            <li class="job card">
+              <div class="job-image-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
+                  />
+                </svg>
+              </div>
+              <div class="content">
+                <h3>Undercover Agent</h3>
+                <div class="meta">
+                  <p>Self employed</p>
+                  <p>01/01/1800 - 01/01/1900</p>
+                </div>
+                <p class="description">
+                  Used espionage and deflection tactics to track criminals and
+                  bring them to justice.
+                </p>
+                <ul class="skill-list">
+                  <li class="skill-list-item">Mechanic</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
-    </div>
-    <div class="content">
-      <section id="about">
-        <h2>About Bobby Pancakes</h2>
-        <p class="description">
-          Bobby Pancakes is a halfling rogue, eventual werewolf, and founding
-          member of the Dragon Friends. Bobby is known for his sharp wit, nimble
-          hands, good-natured attitude and loyalty to his friends. He is the
-          only known member of
-          <a href="https://thedragonfriends.fandom.com/wiki/House_Pancake"
-            >House Pancake</a
+      <footer>
+        <h2>Credits</h2>
+        <p>
+          Dr. Lyntel'luroon is played by Kat Kuhl in the
+          <a href="https://one-shot.fandom.com/wiki/Campaign:Campaign"
+            >Campaign podcast</a
           >.
         </p>
-      </section>
-      <section class="skills">
-        <h2>Skills</h2>
         <p>
-          With high dexterity and intelligence, Bobby can sneak, steal, and
-          mislead quite well. Throughout his adventures, he's proven to have a
-          (mostly) calm and practical demeanor. Though that may simply be in
-          comparison to his companions.
+          The content for this page is sourced from the
+          <a href="https://one-shot.fandom.com/wiki/Campaign:Lyntel%27luroon"
+            >Campaign Wiki</a
+          >.
         </p>
-        <ul class="skill-list">
-          <li class="skill-list-item">API maker</li>
-          <li class="skill-list-item">Pancake maker</li>
-          <li class="skill-list-item">Vampire staker</li>
-        </ul>
-      </section>
-      <section id="samples">
-        <h2>Samples</h2>
-        <ul class="sample-list">
-          <li class="sample card">
-            <div class="content">
-              <h3>On Jazz</h3>
-              <div class="meta">
-                <p>Actually created by Robert</p>
-              </div>
-              <p class="description">
-                During one of Robert's more lucid and in control states, he
-                waxed poetic about the beauty of Jazz.
-              </p>
-            </div>
-            <div class="button-group">
-              <button class="download">
-                <a href="./samples/Sample1.odt" download="sample1">Download</a>
-              </button>
-            </div>
-          </li>
-          <li class="sample card">
-            <div class="content">
-              <h3>Dragon Friends</h3>
-              <div class="meta">
-                <p>Much too sappy</p>
-              </div>
-              <p class="description">
-                While Bobby was separated from his companions, he wrote letters
-                to all them. Then tore them up and wrote a letter to himself
-                instead.
-              </p>
-            </div>
-            <div class="button-group">
-              <button class="download">
-                <a href="./samples/Sample2.odt" download="sample2">Download</a>
-              </button>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section id="experience">
-        <h2>Work experience</h2>
-        <ul class="job-list">
-          <li class="job card">
-            <img
-              src="./icons/employer-logo.svg"
-              alt="Placholder image for an employer logo."
-            />
-
-            <div class="content">
-              <h3>Rogue</h3>
-              <div class="meta">
-                <p>Self employed</p>
-                <p>01/01/1900 - 01/01/2020</p>
-              </div>
-              <p class="description">
-                Stole and bamboozled his way through many difficult situations.
-              </p>
-              <ul class="skill-list">
-                <li class="skill-list-item">Pancake maker</li>
-              </ul>
-            </div>
-          </li>
-          <li class="job card">
-            <img
-              src="./icons/employer-logo.svg"
-              alt="Placholder image for an employer logo."
-            />
-
-            <div class="content">
-              <h3>Arcane Trickster</h3>
-              <div class="meta">
-                <p>Self employed</p>
-                <p>01/01/1800 - 01/01/1900</p>
-              </div>
-              <p class="description">
-                Used the arcane arts to mesmerize and confuse. All the better to
-                pilfer some pockets.
-              </p>
-              <ul class="skill-list">
-                <li class="skill-list-item">API maker</li>
-                <li class="skill-list-item">Vampire staker</li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </section>
+      </footer>
     </div>
-    <footer>
-      <h2>Credits</h2>
-      <p>
-        Bobby Pancakes is played by Simon Greiner in the
-        <a href="https://thedragonfriends.com/about/"
-          >Dragon Friends D&D campaign</a
-        >. The content for this page is sourced from the
-        <a href="https://thedragonfriends.fandom.com/wiki/Bobby_Pancakes"
-          >Dragon Friends Wiki</a
-        >.
-      </p>
-    </footer>
   </body>
 </html>
